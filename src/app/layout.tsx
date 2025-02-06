@@ -4,9 +4,14 @@ import { GlobalStyles } from '@mui/material';
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 
-const geistSans = localFont({
+const amplesoft = localFont({
   src: './fonts/AmpleSoftPro.ttf',
   variable: '--font-ample-soft',
+  weight: '100 200 300 400 500 600 700 800 900',
+});
+const amplesoftBold = localFont({
+  src: './fonts/AmpleSoftPro-Bold.ttf',
+  variable: '--font-ample-soft-bold',
   weight: '100 200 300 400 500 600 700 800 900',
 });
 
@@ -21,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable}`}>
+      <body className={`${amplesoft.variable} ${amplesoftBold.variable}`}>
         <ThemeProvider>
           <GlobalStyles
             styles={{
