@@ -1,4 +1,3 @@
-import { LayoutDefault } from '@/components/layout-default/layout-default';
 import { ThemeProvider } from '@/providers/theme-provider/theme-provider';
 import { GlobalStyles } from '@mui/material';
 import type { Metadata } from 'next';
@@ -41,7 +40,7 @@ export default function RootLayout({
               },
             }}
           />
-          <LayoutDefault>{children}</LayoutDefault>
+          {children}
         </ThemeProvider>
       </body>
     </html>
