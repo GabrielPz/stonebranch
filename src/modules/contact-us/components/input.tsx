@@ -1,7 +1,7 @@
-import React from "react";
-import TextField from "@mui/material/TextField";
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
+import React from 'react';
+import TextField from '@mui/material/TextField';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
 
 interface StyledInputProps {
   value: string;
@@ -9,35 +9,45 @@ interface StyledInputProps {
   placeholder?: string;
 }
 
-const StyledInput: React.FC<StyledInputProps> = ({ value, onChange, placeholder }) => {
+const StyledInput: React.FC<StyledInputProps> = ({
+  value,
+  onChange,
+  placeholder,
+}) => {
   return (
     <Box display="flex" flexDirection="column" width="100%">
-      <Typography fontWeight={600} fontSize={14} color="#000" marginBottom={0.5}>
-        {placeholder} <span style={{ color: "red" }}>*</span>
+      <Typography
+        fontWeight={500}
+        fontSize={14}
+        color="#000"
+        marginBottom={0.5}
+        fontFamily="sans-serif"
+      >
+        {placeholder} <span style={{ color: 'red' }}>*</span>
       </Typography>
       <TextField
         variant="outlined"
         fullWidth
-        placeholder={placeholder || "First Name"}
+        placeholder={placeholder || 'First Name'}
         value={value}
         onChange={onChange}
         slotProps={{
           input: {
             sx: {
-              borderRadius: "8px",
-              backgroundColor: "#f5f8fa",
+              borderRadius: '8px',
+              backgroundColor: '#f5f8fa',
               '& .MuiOutlinedInput-notchedOutline': {
-                borderColor: "#d3dce6",
+                borderColor: '#d3dce6',
               },
               '&:hover .MuiOutlinedInput-notchedOutline': {
-                borderColor: "#b0bec5",
+                borderColor: '#b0bec5',
               },
               '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
-                borderColor: "#1976d2",
-                borderWidth: "2px",
+                borderColor: '#1976d2',
+                borderWidth: '2px',
               },
             },
-          }
+          },
         }}
       />
     </Box>

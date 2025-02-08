@@ -106,7 +106,7 @@ export const partnersImagesData: PartnerImagesProps = {
         },
       },
       url:
-        'https://www.stonebranch.com/fileadmin/_processed_/6/2/csm_stonebranch-bmw-group_65e8290b73.png',
+      'https://www.stonebranch.com/fileadmin/_processed_/6/2/csm_stonebranch-bmw-group_65e8290b73.png',
     },
     {
       id: 8,

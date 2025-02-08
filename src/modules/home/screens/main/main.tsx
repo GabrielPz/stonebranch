@@ -1,23 +1,32 @@
 'use client';
 
-import { Box, Button, Container, Grid2, Typography, useMediaQuery, useTheme } from '@mui/material';
+import {
+  Box,
+  Button,
+  Container,
+  Grid2,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from '@mui/material';
 import Image from 'next/image';
 import { PartnersImages } from './components/partners-images/partners-images';
 import { ServicesCard } from './components/services-card/services-card';
 import { servicesCardData } from '@/utils/home/services-card-data';
+import { ProvenExperience } from './components/proven-experience/proven-experience';
 
 const fontFamilyBoldVar = 'var(--font-ample-soft-bold)';
 
 export function Home() {
   const theme = useTheme();
-  const isBiggerThanLarge = useMediaQuery(theme.breakpoints.up('xl'));
+  const isBiggerThanXLarge = useMediaQuery(theme.breakpoints.up('xl'));
   return (
     <Box>
-      <Container maxWidth={isBiggerThanLarge ? 'xl' : 'lg'}>
+      <Container maxWidth={isBiggerThanXLarge ? 'lg' : 'md'}>
         <Box
           position="absolute"
-          width={650}
-          height={450}
+          width={!isBiggerThanXLarge ? 450 : 750}
+          height={!isBiggerThanXLarge ? 350 :550}
           top={0}
           right={0}
           zIndex={-1}
@@ -27,6 +36,8 @@ export function Home() {
         <Typography
           variant="h3"
           fontWeight={700}
+          fontSize={46}
+          mt={6}
           mb={3}
           fontFamily={fontFamilyBoldVar}
         >
@@ -35,6 +46,7 @@ export function Home() {
             color="secondary.main"
             fontFamily={fontFamilyBoldVar}
             variant="h3"
+            fontSize={46}
             fontWeight={900}
             mb={20}
           >
@@ -97,7 +109,7 @@ export function Home() {
           event-based, respond intelligently to <br /> business needs, minimize
           human oversight, and run on-prem and in the cloud.
         </Typography>
-        <Grid2 container spacing={3} justifyContent="center">
+        <Grid2 container spacing={3} justifyContent="center" mb={7}>
           {servicesCardData.map((item) => (
             <Grid2
               key={item.title}
@@ -114,6 +126,7 @@ export function Home() {
           ))}
         </Grid2>
       </Container>
+      <ProvenExperience />
     </Box>
   );
 }

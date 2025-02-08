@@ -2,10 +2,16 @@
 'use client';
 
 import { directorsData, leadershipTeamData } from '@/utils/about-us/cards-data';
-import { Box, Container, Link, Typography, useMediaQuery, useTheme } from '@mui/material';
+import {
+  Box,
+  Container,
+  Link,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from '@mui/material';
 import Image from 'next/image';
 import { CardsGrid } from './components/cards-grid/cards-grid';
-
 
 const fontFamilyBoldVar = 'var(--font-ample-soft-bold)';
 
@@ -14,21 +20,18 @@ export function AboutUs() {
   const isBiggerThanLarge = useMediaQuery(theme.breakpoints.up('xl'));
   return (
     <Box>
-      <Container maxWidth={isBiggerThanLarge ? 'xl' : 'lg'}>
+      <Container maxWidth={isBiggerThanLarge ? 'lg' : 'md'}>
         <Box
           position="absolute"
-          width={950}
-          height={650}
+          width={!isBiggerThanLarge ? 450 : 750}
+          height={!isBiggerThanLarge ? 350 : 550}
           top={0}
           right={0}
           zIndex={-1}
         >
           <Image src="/assets/inicio-lateral.svg" alt="logo" fill />
         </Box>
-        <Box
-          width="50%"
-          mt={8}
-        >
+        <Box width="50%" mt={8}>
           <Typography
             variant="h3"
             fontWeight={600}
@@ -38,20 +41,14 @@ export function AboutUs() {
             <Typography
               component="span"
               color="primary.main"
-              fontFamily={fontFamilyBoldVar}
-              variant="h3"
+              variant="h4"
               fontWeight={600}
               mb={20}
             >
               Orchestrate the Universe
             </Typography>
           </Typography>
-          <Typography
-            variant="h5"
-            fontWeight={600}
-            mb={4}
-            fontFamily={'sans-serif'}
-          >
+          <Typography variant="h5" fontWeight={600} mb={4}>
             About Stonebranch
           </Typography>
           <Typography
@@ -60,7 +57,13 @@ export function AboutUs() {
             mb={4}
             fontFamily={'sans-serif'}
           >
-            With decades of experience, Stonebranch set out to change the IT automation market for the better. To develop the right purpose-built solutions with user experience and accessibility in mind. To provide a true orchestration engine that empowers our customers to automate any on-prem or cloud solution. To ultimately enable you with the centralized control needed to better manage and scale with your expanding hybrid IT ecosystem.
+            With decades of experience, Stonebranch set out to change the IT
+            automation market for the better. To develop the right purpose-built
+            solutions with user experience and accessibility in mind. To provide
+            a true orchestration engine that empowers our customers to automate
+            any on-prem or cloud solution. To ultimately enable you with the
+            centralized control needed to better manage and scale with your
+            expanding hybrid IT ecosystem.
           </Typography>
           <Typography
             variant="h6"
@@ -68,22 +71,41 @@ export function AboutUs() {
             mb={4}
             fontFamily={'sans-serif'}
           >
-            Stonebranch is a force to be reckoned with in the IT orchestration and automation platform space. We shoot past the point where others have stopped, challenging the status quo, and exceeding expectations. We do this with the personalized service and leading-edge technology that is lacking with other providers.
+            Stonebranch is a force to be reckoned with in the IT orchestration
+            and automation platform space. We shoot past the point where others
+            have stopped, challenging the status quo, and exceeding
+            expectations. We do this with the personalized service and
+            leading-edge technology that is lacking with other providers.
           </Typography>
-          <Typography variant="h5" fontWeight={500} mb={4} fontFamily={'sans-serif'}>
+          <Typography
+            variant="h6"
+            fontWeight={500}
+            mb={4}
+            fontFamily={'sans-serif'}
+          >
             We invite you to{' '}
-            <Link href="/explore-platform">
-              <a style={{ color: '#1976d2', textDecoration: 'none' }}>explore our platform</a>
+            <Link
+              href="/explore-platform"
+              style={{ color: '#1976d2', textDecoration: 'none' }}
+            >
+              <a>explore our platform</a>
             </Link>
             , learn about the{' '}
-            <Link href="/customer-successes">
-              <a style={{ color: '#1976d2', textDecoration: 'none' }}>successes of our customers</a>
+            <Link
+              href="/customer-successes"
+              style={{ color: '#1976d2', textDecoration: 'none' }}
+            >
+              <a>successes of our customers</a>
             </Link>
             , and{' '}
-            <Link href="/contact">
-              <a style={{ color: '#1976d2', textDecoration: 'none' }}>contact us</a>
-            </Link>
-            {' '}to learn more. We are here to orchestrate the IT world. Let&apos;s do it together.
+            <Link
+              href="/contact"
+              style={{ color: '#1976d2', textDecoration: 'none' }}
+            >
+              <a>contact us</a>
+            </Link>{' '}
+            to learn more. We are here to orchestrate the IT world. Let&apos;s
+            do it together.
           </Typography>
         </Box>
 
@@ -131,8 +153,8 @@ export function AboutUs() {
           variant="h4"
           fontWeight={400}
           mt={4}
-          align='center'
-          color='white'
+          align="center"
+          color="white"
           fontFamily={fontFamilyBoldVar}
         >
           Our Values are Part of our DNA <br />
@@ -143,19 +165,15 @@ export function AboutUs() {
           fontWeight={400}
           mt={3}
           mb={4}
-          align='center'
-          color='white'
+          align="center"
+          color="white"
           fontFamily={'sans-serif'}
         >
-          Together, these values set the stage for our service and promises to our clients, as well as our relationships with one another.
+          Together, these values set the stage for our service and promises to
+          our clients, as well as our relationships with one another.
         </Typography>
       </Box>
-      <Box
-          position="relative"
-          left={0}
-          right={0}
-          width="100%"
-      >
+      <Box position="relative" left={0} right={0} width="100%">
         <img
           src={'/assets/about-us/stonebranch_about.jpg'}
           alt="About Us Image"
@@ -188,8 +206,8 @@ export function AboutUs() {
           variant="h4"
           fontWeight={400}
           mt={4}
-          align='center'
-          color='white'
+          align="center"
+          color="white"
           fontFamily={fontFamilyBoldVar}
         >
           Stonebranch Leadership Team
@@ -199,11 +217,14 @@ export function AboutUs() {
           fontWeight={400}
           mb={4}
           mt={4}
-          align='center'
-          color='white'
+          align="center"
+          color="white"
           fontFamily={'sans-serif'}
         >
-          The Stonebranch leadership team is comprised of savvy entrepreneurs and seasoned industry experts, bringing years of <br/> experience and innovation to an established company recognized by analysts for its vision and value leadership.
+          The Stonebranch leadership team is comprised of savvy entrepreneurs
+          and seasoned industry experts, bringing years of <br /> experience and
+          innovation to an established company recognized by analysts for its
+          vision and value leadership.
         </Typography>
       </Box>
       <CardsGrid
@@ -233,8 +254,8 @@ export function AboutUs() {
           variant="h4"
           fontWeight={400}
           mt={4}
-          align='center'
-          color='white'
+          align="center"
+          color="white"
           fontFamily={fontFamilyBoldVar}
         >
           Board of Directors
@@ -244,11 +265,13 @@ export function AboutUs() {
           fontWeight={400}
           mb={4}
           mt={4}
-          align='center'
-          color='white'
+          align="center"
+          color="white"
           fontFamily={'sans-serif'}
         >
-         Stonebranch&apos;s board of directors have a wealth of experience across the information technology, finance,<br/> and business sectors.
+          Stonebranch&apos;s board of directors have a wealth of experience
+          across the information technology, finance,
+          <br /> and business sectors.
         </Typography>
       </Box>
       <CardsGrid
@@ -260,7 +283,7 @@ export function AboutUs() {
             sm: 12,
             md: 6,
             lg: 4,
-          }
+          },
         }}
       />
     </Box>

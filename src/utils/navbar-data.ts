@@ -2,7 +2,8 @@ import { NavbarItem } from '@/entities/navbar';
 
 export const navbarData: NavbarItem[] = [
   {
-    title: 'Services',
+    title: 'Sobre',
+    link: '/about-us',
     options: [
       {
         id: '1',
@@ -17,7 +18,8 @@ export const navbarData: NavbarItem[] = [
     ],
   },
   {
-    title: 'Capabilities',
+    title: 'Contato',
+    link: '/contact-us',
     options: [
       {
         id: '1',

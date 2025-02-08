@@ -1,17 +1,24 @@
- 
 'use client';
 
-import { Box, Card, Container, Divider, Grid2, Link, Typography, useMediaQuery, useTheme } from '@mui/material';
+import {
+  Box,
+  Card,
+  Container,
+  Divider,
+  Grid2,
+  Link,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from '@mui/material';
 import { ContactUsForm } from '../../components/contact-us-form';
-
-const fontFamilyBoldVar = 'var(--font-ample-soft-bold)';
 
 export function ContactUs() {
   const theme = useTheme();
   const isBiggerThanLarge = useMediaQuery(theme.breakpoints.up('xl'));
   return (
     <Box>
-      <Container maxWidth={isBiggerThanLarge ? 'xl' : 'lg'}>
+      <Container maxWidth={isBiggerThanLarge ? 'lg' : 'md'}>
         <Grid2 container mt={8} spacing={8} mb={8}>
           <Grid2
             size={{
@@ -24,15 +31,13 @@ export function ContactUs() {
             <Card
               elevation={6}
               sx={{
-                padding: '1.5rem'
+                padding: '1.5rem',
               }}
             >
-
               <Typography
                 color="primary.main"
-                fontFamily={fontFamilyBoldVar}
                 variant="h4"
-                fontWeight={500}
+                fontWeight={600}
                 mb={4}
               >
                 Contact Us
@@ -51,13 +56,14 @@ export function ContactUs() {
                 variant="h6"
                 fontWeight={400}
               >
-                A member of the Stonebranch team will be in touch with you shortly.
+                A member of the Stonebranch team will be in touch with you
+                shortly.
               </Typography>
               <Typography
                 color="primary.main"
                 fontFamily={'sans-serif'}
                 variant="h6"
-                fontWeight={700}
+                fontWeight={600}
                 mb={4}
               >
                 Contact Us
@@ -68,17 +74,10 @@ export function ContactUs() {
               elevation={6}
               sx={{
                 marginTop: '2rem',
-                padding: '1.5rem'
+                padding: '1.5rem',
               }}
             >
-
-              <Typography
-                color="primary.main"
-                fontFamily={fontFamilyBoldVar}
-                variant="h4"
-                fontWeight={500}
-                mb={4}
-              >
+              <Typography color="#1251A3" variant="h5" fontWeight={600} mb={4}>
                 Stonebranch Support
               </Typography>
               <Typography
@@ -87,14 +86,13 @@ export function ContactUs() {
                 variant="h6"
                 fontWeight={400}
               >
-                If you are experiencing a problem with an installed product<br/>
+                If you are experiencing a problem with an installed product
+                <br />
                 please call support at the following numbers.
               </Typography>
-              <Divider
-                variant='fullWidth'
-              />
+              <Divider variant="fullWidth" />
               <Grid2 container mt={4} spacing={4}>
-                <Grid2  
+                <Grid2
                   size={{
                     xs: 12,
                     sm: 12,
@@ -103,7 +101,7 @@ export function ContactUs() {
                   }}
                 >
                   <Typography
-                    color="primary.main"
+                    color="#1251A3"
                     fontFamily={'sans-serif'}
                     variant="h5"
                     fontWeight={500}
@@ -112,8 +110,7 @@ export function ContactUs() {
                     For Europe, call:
                   </Typography>
                   <Typography
-                    color="primary.main"
-                    fontFamily={fontFamilyBoldVar}
+                    color="#1251A3"
                     variant="h4"
                     fontWeight={700}
                     mb={6}
@@ -126,7 +123,7 @@ export function ContactUs() {
                     variant="h6"
                     fontWeight={400}
                   >
-                    Or email Stonebranch support at <br/>
+                    Or email Stonebranch support at <br />
                     <Link
                       href="mailto:support@stonebranch.com"
                       sx={{
@@ -136,14 +133,14 @@ export function ContactUs() {
                         '&:hover': {
                           color: '#186CDA', // Cor mais escura no hover
                           textDecoration: 'underline', // Adiciona sublinhado ao passar o mouse
-                        }
+                        },
                       }}
                     >
                       support@stonebranch.com
                     </Link>
                   </Typography>
                 </Grid2>
-                <Grid2  
+                <Grid2
                   size={{
                     xs: 12,
                     sm: 12,
@@ -152,7 +149,7 @@ export function ContactUs() {
                   }}
                 >
                   <Typography
-                    color="primary.main"
+                    color="#1251A3"
                     fontFamily={'sans-serif'}
                     variant="h5"
                     fontWeight={500}
@@ -161,8 +158,7 @@ export function ContactUs() {
                     For North America, call:
                   </Typography>
                   <Typography
-                    color="primary.main"
-                    fontFamily={fontFamilyBoldVar}
+                    color="#1251A3"
                     variant="h4"
                     fontWeight={700}
                     mb={6}
@@ -178,10 +174,9 @@ export function ContactUs() {
                   >
                     and select option 6 or
                   </Typography>
-                  
+
                   <Typography
-                    color="primary.main"
-                    fontFamily={fontFamilyBoldVar}
+                    color="#1251A3"
                     variant="h4"
                     fontWeight={700}
                     mb={6}
@@ -198,7 +193,6 @@ export function ContactUs() {
                   </Typography>
                 </Grid2>
               </Grid2>
-              
             </Card>
           </Grid2>
           <Grid2
@@ -211,9 +205,8 @@ export function ContactUs() {
           >
             <Typography
               color="primary.main"
-              fontFamily={fontFamilyBoldVar}
               variant="h4"
-              fontWeight={500}
+              fontWeight={600}
               mb={4}
             >
               Global Locations
@@ -225,20 +218,21 @@ export function ContactUs() {
               fontWeight={500}
               mb={4}
             >
-              Stonebranch has points of support all over the world, and still you can reach us everywhere! Find your best contact partner nearby. We are happy to help you with any issue with our professional customer support. Find out more.
+              Stonebranch has points of support all over the world, and still
+              you can reach us everywhere! Find your best contact partner
+              nearby. We are happy to help you with any issue with our
+              professional customer support. Find out more.
             </Typography>
             <Typography
               color="primary.main"
-              fontFamily={fontFamilyBoldVar}
               variant="h5"
-              fontWeight={500}
+              fontWeight={600}
               mb={4}
             >
               Stonebranch, Inc. (Headquarters)
             </Typography>
             <Typography
               color="primary.main"
-              fontFamily={'sans-serif'}
               variant="h6"
               fontWeight={600}
               mb={4}
@@ -252,7 +246,7 @@ export function ContactUs() {
               fontWeight={400}
               mb={4}
             >
-              4550 North Point Parkway, Suite 400 <br/>
+              4550 North Point Parkway, Suite 400 <br />
               Alpharetta, GA, 30022, USA
             </Typography>
 
@@ -272,7 +266,7 @@ export function ContactUs() {
                   '&:hover': {
                     color: '#186CDA', // Cor mais escura no hover
                     textDecoration: 'underline', // Adiciona sublinhado ao passar o mouse
-                  }
+                  },
                 }}
               >
                 +1 877 336 7808
@@ -294,7 +288,7 @@ export function ContactUs() {
                   '&:hover': {
                     color: '#186CDA', // Cor mais escura no hover
                     textDecoration: 'underline', // Adiciona sublinhado ao passar o mouse
-                  }
+                  },
                 }}
               >
                 +1 678 366 7887
@@ -312,21 +306,20 @@ export function ContactUs() {
 
             <Typography
               color="primary.main"
-              fontFamily={fontFamilyBoldVar}
               variant="h5"
-              fontWeight={500}
+              fontWeight={600}
               mb={4}
             >
               Stonebranch GmbH – EMEA Head Office
             </Typography>
             <Typography
               color="primary.main"
-              fontFamily={'sans-serif'}
               variant="h6"
               fontWeight={600}
               mb={4}
             >
-              Austria, Belgium, Denmark, Finland, Germany, Luxembourg, Netherlands, Norway, Sweden, Switzerlan
+              Austria, Belgium, Denmark, Finland, Germany, Luxembourg,
+              Netherlands, Norway, Sweden, Switzerlan
             </Typography>
             <Typography
               color="primary.main"
@@ -335,7 +328,8 @@ export function ContactUs() {
               fontWeight={400}
               mb={4}
             >
-              Europa-Allee 54<br/>
+              Europa-Allee 54
+              <br />
               60327 Frankfurt am Main, Germany
             </Typography>
             <Typography
@@ -355,7 +349,7 @@ export function ContactUs() {
                   '&:hover': {
                     color: '#186CDA', // Cor mais escura no hover
                     textDecoration: 'underline', // Adiciona sublinhado ao passar o mouse
-                  }
+                  },
                 }}
               >
                 +49 69 743048500
@@ -363,21 +357,20 @@ export function ContactUs() {
             </Typography>
             <Typography
               color="primary.main"
-              fontFamily={fontFamilyBoldVar}
               variant="h5"
-              fontWeight={500}
+              fontWeight={600}
               mb={4}
             >
               Stonebranch Sdn. Bhd. – APAC Office
             </Typography>
             <Typography
               color="primary.main"
-              fontFamily={'sans-serif'}
               variant="h6"
               fontWeight={600}
               mb={4}
             >
-              Malaysia, Indonesia, South Korea, China, Japan, New Zealand, Australia, Thailand, Singapore, Philippines, Vietnam, etc.
+              Malaysia, Indonesia, South Korea, China, Japan, New Zealand,
+              Australia, Thailand, Singapore, Philippines, Vietnam, etc.
             </Typography>
 
             <Typography
@@ -387,10 +380,14 @@ export function ContactUs() {
               fontWeight={400}
               mb={4}
             >
-              Business Registration Number: 201901046644 (1355974-T)<br/>
-              A-23-10, Menara The MET<br/>
-              No 20, Jalan Dutamas 2,<br/>
-              50480 Kuala Lampur<br/>
+              Business Registration Number: 201901046644 (1355974-T)
+              <br />
+              A-23-10, Menara The MET
+              <br />
+              No 20, Jalan Dutamas 2,
+              <br />
+              50480 Kuala Lampur
+              <br />
               Malaysia
             </Typography>
 
@@ -411,7 +408,7 @@ export function ContactUs() {
                   '&:hover': {
                     color: '#186CDA', // Cor mais escura no hover
                     textDecoration: 'underline', // Adiciona sublinhado ao passar o mouse
-                  }
+                  },
                 }}
               >
                 +603 7624 8068
@@ -424,13 +421,12 @@ export function ContactUs() {
               mb={4}
               fontWeight={400}
             >
-              Fax: +603 7652 2868 
+              Fax: +603 7652 2868
             </Typography>
             <Typography
               color="primary.main"
-              fontFamily={fontFamilyBoldVar}
               variant="h5"
-              fontWeight={500}
+              fontWeight={600}
               mb={4}
             >
               France
@@ -442,8 +438,10 @@ export function ContactUs() {
               fontWeight={400}
               mb={4}
             >
-              Stonebranch SAS<br/>
-              29-31 Rue de Courcelles<br/>
+              Stonebranch SAS
+              <br />
+              29-31 Rue de Courcelles
+              <br />
               75008 Paris, France
             </Typography>
             <Typography
@@ -463,21 +461,17 @@ export function ContactUs() {
                   '&:hover': {
                     color: '#186CDA', // Cor mais escura no hover
                     textDecoration: 'underline', // Adiciona sublinhado ao passar o mouse
-                  }
+                  },
                 }}
               >
                 +33 1 83 75 04 06
               </Link>
             </Typography>
 
-
-
-
             <Typography
               color="primary.main"
-              fontFamily={fontFamilyBoldVar}
               variant="h5"
-              fontWeight={500}
+              fontWeight={600}
               mb={4}
             >
               Greece
@@ -489,7 +483,8 @@ export function ContactUs() {
               fontWeight={400}
               mb={4}
             >
-              Limited Liability Company<br/>
+              Limited Liability Company
+              <br />
               Daring Star Software Systems LTD
             </Typography>
             <Typography
@@ -499,8 +494,9 @@ export function ContactUs() {
               fontWeight={400}
               mb={4}
             >
-              Headquarters: <br/>
-              4550 North Point Parkway, Suite 400<br/>
+              Headquarters: <br />
+              4550 North Point Parkway, Suite 400
+              <br />
               Alpharetta, GA, 30022, USA
             </Typography>
             <Typography
@@ -510,10 +506,14 @@ export function ContactUs() {
               fontWeight={400}
               mb={4}
             >
-              GEMI number: 000124096901000<br/>
-              Tax Registration Number: 997788579<br/>
-              Menelaou 9,<br/>
-              15124 Marousi, Greece<br/>
+              GEMI number: 000124096901000
+              <br />
+              Tax Registration Number: 997788579
+              <br />
+              Menelaou 9,
+              <br />
+              15124 Marousi, Greece
+              <br />
             </Typography>
             <Typography
               color="primary.main"
@@ -532,19 +532,17 @@ export function ContactUs() {
                   '&:hover': {
                     color: '#186CDA', // Cor mais escura no hover
                     textDecoration: 'underline', // Adiciona sublinhado ao passar o mouse
-                  }
+                  },
                 }}
               >
                 +30 210 6100762
               </Link>
             </Typography>
 
-
             <Typography
               color="primary.main"
-              fontFamily={fontFamilyBoldVar}
               variant="h5"
-              fontWeight={500}
+              fontWeight={600}
               mb={4}
             >
               North Macedonia
@@ -556,11 +554,13 @@ export function ContactUs() {
               fontWeight={400}
               mb={4}
             >
-              Daring Star Automation Services Dooel Skopje<br/>
-              Kliment Ohridski Νο.16<br/>
+              Daring Star Automation Services Dooel Skopje
+              <br />
+              Kliment Ohridski Νο.16
+              <br />
               1000 Skopje, North Macedonia
             </Typography>
-           
+
             <Typography
               color="primary.main"
               fontFamily={'sans-serif'}
@@ -578,19 +578,17 @@ export function ContactUs() {
                   '&:hover': {
                     color: '#186CDA', // Cor mais escura no hover
                     textDecoration: 'underline', // Adiciona sublinhado ao passar o mouse
-                  }
+                  },
                 }}
               >
                 +389 2 551 3278
               </Link>
             </Typography>
 
-
             <Typography
               color="primary.main"
-              fontFamily={fontFamilyBoldVar}
               variant="h5"
-              fontWeight={500}
+              fontWeight={600}
               mb={4}
             >
               Spain
@@ -602,14 +600,18 @@ export function ContactUs() {
               fontWeight={400}
               mb={4}
             >
-              Stonebranch Spain, S.L.<br/>
-              C/ Caléndula, 93<br/>
-              Miniparc III - Edif. E<br/>
-              El Soto de la Moraleja<br/>
-              28109 Alcobendas<br/>
+              Stonebranch Spain, S.L.
+              <br />
+              C/ Caléndula, 93
+              <br />
+              Miniparc III - Edif. E<br />
+              El Soto de la Moraleja
+              <br />
+              28109 Alcobendas
+              <br />
               Madrid, Spain
             </Typography>
-           
+
             <Typography
               color="primary.main"
               fontFamily={'sans-serif'}
@@ -627,19 +629,17 @@ export function ContactUs() {
                   '&:hover': {
                     color: '#186CDA', // Cor mais escura no hover
                     textDecoration: 'underline', // Adiciona sublinhado ao passar o mouse
-                  }
+                  },
                 }}
               >
                 +34 917 912 963
               </Link>
             </Typography>
 
-
             <Typography
               color="primary.main"
-              fontFamily={fontFamilyBoldVar}
               variant="h5"
-              fontWeight={500}
+              fontWeight={600}
               mb={4}
             >
               United Kingdom, Ireland
@@ -651,15 +651,14 @@ export function ContactUs() {
               fontWeight={400}
               mb={4}
             >
-              Aviation House<br/>
-              125 Kingsway<br/>
-              London WC2B 6NH, United Kingdom 
+              Aviation House
+              <br />
+              125 Kingsway
+              <br />
+              London WC2B 6NH, United Kingdom
             </Typography>
-           
           </Grid2>
-          
         </Grid2>
-
       </Container>
     </Box>
   );

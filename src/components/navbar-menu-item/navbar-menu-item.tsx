@@ -1,6 +1,7 @@
 import { NavbarItem } from '@/entities/navbar';
 import { KeyboardArrowDown } from '@mui/icons-material';
 import { Box, Button, Menu, MenuItem, Typography } from '@mui/material';
+import Link from 'next/link';
 import { useState } from 'react';
 
 export const NavbarMenuItem = (data: NavbarItem) => {
@@ -13,31 +14,33 @@ export const NavbarMenuItem = (data: NavbarItem) => {
     setAnchorEl(null);
   };
   return (
-    <Box >
-      <Button
-        endIcon={<KeyboardArrowDown sx={{
-          color: data.onScroll ? 'primary.main' : 'white',
-        }}/>}
-        id="basic-button"
-        aria-controls={open ? 'basic-menu' : undefined}
-        aria-haspopup="true"
-        aria-expanded={open ? 'true' : undefined}
-        onMouseEnter={handleClick}
-        sx={{
-          textTransform: 'none',
-          padding: '0',
-        }}
-      >
-        <Typography
+    <Box>
+      <Link href={data.link || '#'}>
+        <Button
+          // endIcon={<KeyboardArrowDown sx={{
+          //   color: data.onScroll ? 'primary.main' : 'white',
+          // }}/>}
+          id="basic-button"
+          aria-controls={open ? 'basic-menu' : undefined}
+          aria-haspopup="true"
+          aria-expanded={open ? 'true' : undefined}
+          // onMouseEnter={handleClick}
           sx={{
-            fontWeight: 600,
-            color: data.onScroll ? 'primary.main' : 'white',
+            textTransform: 'none',
+            padding: '0',
           }}
         >
-          {data.title}
-        </Typography>
-      </Button>
-      <Menu
+          <Typography
+            sx={{
+              fontWeight: 600,
+              color: data.onScroll ? 'primary.main' : 'white',
+            }}
+          >
+            {data.title}
+          </Typography>
+        </Button>
+      </Link>
+      {/* <Menu
         onMouseLeave={handleClose}
         id="basic-menu"
         anchorEl={anchorEl}
@@ -52,7 +55,7 @@ export const NavbarMenuItem = (data: NavbarItem) => {
             {item.title}
           </MenuItem>
         ))}
-      </Menu>
+      </Menu> */}
     </Box>
   );
 };

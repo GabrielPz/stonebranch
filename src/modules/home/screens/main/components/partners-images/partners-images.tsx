@@ -4,7 +4,12 @@ import Image from 'next/image';
 
 export function PartnersImages() {
   return (
-    <Grid2 container spacing={1} justifyContent="center" mt={4}>
+    <Grid2
+      container
+      spacing={1}
+      justifyContent="space-between"
+      mt={4}
+    >
       {partnersImagesData.firts.map((item) => (
         <Grid2
           display={'flex'}

@@ -1,7 +1,13 @@
 'use client';
 
 import { Search } from '@mui/icons-material';
-import { Box, Container, IconButton, useMediaQuery, useScrollTrigger, useTheme } from '@mui/material';
+import {
+  Box,
+  Container,
+  IconButton,
+  useMediaQuery,
+  useTheme,
+} from '@mui/material';
 import Image from 'next/image';
 import { NavbarMenuItem } from '../navbar-menu-item/navbar-menu-item';
 import { navbarData } from '@/utils/navbar-data';
@@ -52,7 +58,7 @@ export function Navbar(props: NavbarProps) {
             padding: '8px 0px !important',
             alignItems: 'center',
           }}
-          maxWidth={isBiggerThanLarge ? 'xl' : 'lg'}
+          maxWidth={isBiggerThanLarge ? 'lg' : 'md'}
         >
           <Box sx={{}}>
             <Image
@@ -88,12 +94,7 @@ export function Navbar(props: NavbarProps) {
               </Box>
               <Box display="flex" alignItems="center" gap={2}>
                 {navbarData.map((item) => (
-                  <NavbarMenuItem
-                    onScroll={!isTop}
-                    key={item.title}
-                    title={item.title}
-                    options={item.options}
-                  />
+                  <NavbarMenuItem {...item} key={item.title} />
                 ))}
               </Box>
             </Box>
