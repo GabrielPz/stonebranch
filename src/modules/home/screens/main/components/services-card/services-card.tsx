@@ -4,7 +4,6 @@ import { Box, Button, Card, Stack, Typography } from '@mui/material';
 export const ServicesCard = ({
   description,
   icon,
-  link,
   title,
 }: ServicesCardProps) => {
   return (
@@ -17,7 +16,7 @@ export const ServicesCard = ({
         transition: 'all 0.1s ease-in-out',
         '&:hover': {
           scale: 1.05,
-        }
+        },
       }}
     >
       <Stack direction="column" justifyContent="space-between" height="100%">
@@ -46,7 +45,7 @@ export const ServicesCard = ({
               borderRadius: 0.6,
               letterSpacing: 1.6,
               fontSize: 14,
-              px: 3
+              px: 3,
             }}
           >
             Learn More

@@ -5,6 +5,7 @@ import {
   Button,
   Container,
   Grid2,
+  Stack,
   Typography,
   useMediaQuery,
   useTheme,
@@ -14,19 +15,38 @@ import { PartnersImages } from './components/partners-images/partners-images';
 import { ServicesCard } from './components/services-card/services-card';
 import { servicesCardData } from '@/utils/home/services-card-data';
 import { ProvenExperience } from './components/proven-experience/proven-experience';
+import { PlanetCards } from './components/planet-cards/plannet-cards';
+import { useState } from 'react';
+import { useMotionValueEvent, useScroll } from 'framer-motion';
 
 const fontFamilyBoldVar = 'var(--font-ample-soft-bold)';
 
 export function Home() {
   const theme = useTheme();
   const isBiggerThanXLarge = useMediaQuery(theme.breakpoints.up('xl'));
+  const { scrollY } = useScroll();
+
+  const [scroll, setScroll] = useState(0);
+  useMotionValueEvent(scrollY, 'change', (latest) => {
+    setScroll(latest);
+  });
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     setScroll(window.scrollY);
+  //   };
+
+  //   window.addEventListener('scroll', handleScroll);
+  //   return () => {
+  //     window.removeEventListener('scroll', handleScroll);
+  //   };
+  // }, []);
   return (
     <Box>
-      <Container maxWidth={isBiggerThanXLarge ? 'lg' : 'md'}>
+      <Container maxWidth={isBiggerThanXLarge ? 'xl' : 'lg'}>
         <Box
           position="absolute"
           width={!isBiggerThanXLarge ? 450 : 750}
-          height={!isBiggerThanXLarge ? 350 :550}
+          height={!isBiggerThanXLarge ? 350 : 550}
           top={0}
           right={0}
           zIndex={-1}
@@ -127,6 +147,73 @@ export function Home() {
         </Grid2>
       </Container>
       <ProvenExperience />
+      <Box bgcolor={'#E7F1FE'}>
+        <Container>
+          <Stack
+            direction="row"
+            justifyContent="center"
+            alignItems="start"
+            gap={10}
+          >
+            <PlanetCards
+              items={[
+                'Analytics & Observality',
+                'Event-Driver Automation',
+                'asdasd',
+                'asdasd',
+                'asdasd',
+                'asdasd',
+              ]}
+              rotation={scroll / 8}
+              radius={200}
+            />
+            <Stack maxWidth={400} gap={2}>
+              <Typography
+                variant="h4"
+                fontFamily={fontFamilyBoldVar}
+                fontWeight={900}
+                mb={1}
+                mt={8}
+                color="secondary.main"
+              >
+                <Typography
+                  component="span"
+                  variant="h4"
+                  fontFamily={fontFamilyBoldVar}
+                  fontWeight={700}
+                  mb={20}
+                  color="primary"
+                >
+                  Universal Automation <br />
+                  Center -
+                </Typography>{' '}
+                The Platform
+              </Typography>
+              <Typography fontFamily={'sans-serif'}>
+                A service orchestration and automation platform (SOAP) built for
+                today … and tomorrow.
+              </Typography>
+              <Typography fontFamily={'sans-serif'}>
+                Click on the hexagons to learn about the core pillars required
+                to automate, manage, and orchestrate. Break down automation
+                silos and gain centralized control and visibility across your
+                entire hybrid IT environment.
+              </Typography>
+              <Button
+                variant="contained"
+                color="secondary"
+                sx={{
+                  maxWidth: 200,
+                  letterSpacing: 2,
+                  mt: 4,
+                }}
+              >
+                Explore UAC Now
+              </Button>
+            </Stack>
+          </Stack>
+        </Container>
+      </Box>
     </Box>
   );
 }

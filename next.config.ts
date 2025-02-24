@@ -1,11 +1,13 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
   images: {
-    remotePatterns: [{
-      hostname: '*'
-    }]
-  }
+    remotePatterns: [
+      {
+        hostname: '*',
+      },
+    ],
+  },
 };
 
 export default nextConfig;

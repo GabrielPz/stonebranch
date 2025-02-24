@@ -1,18 +1,12 @@
 import { NavbarItem } from '@/entities/navbar';
-import { KeyboardArrowDown } from '@mui/icons-material';
-import { Box, Button, Menu, MenuItem, Typography } from '@mui/material';
+import { Box, Button, Typography } from '@mui/material';
 import Link from 'next/link';
 import { useState } from 'react';
 
 export const NavbarMenuItem = (data: NavbarItem) => {
-  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const [anchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
-  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
+
   return (
     <Box>
       <Link href={data.link || '#'}>

@@ -67,8 +67,13 @@ export function ProvenExperience() {
         backgroundAttachment: 'fixed, scroll',
       }}
     >
-      <Container maxWidth={isBiggerThanLarge ? 'lg' : 'md'}>
-        <Stack gap={4} direction="row" py={6}>
+      <Container
+        maxWidth={isBiggerThanLarge ? 'lg' : 'md'}
+        sx={{
+          py: 6,
+        }}
+      >
+        <Stack gap={4} direction="row">
           <Stack direction="column" justifyContent="flex-start" maxWidth={434}>
             <Typography
               fontFamily={fontFamilyBoldVar}
@@ -158,6 +163,60 @@ export function ProvenExperience() {
                 ))}
               </Grid2>
             ))}
+          </Stack>
+        </Stack>
+        <Stack direction="row" gap={4} mt={3} justifyContent="space-between" maxWidth={1000}>
+          <Stack>
+            <Typography
+              variant="h3"
+              fontFamily={fontFamilyBoldVar}
+              fontWeight={900}
+              color="white"
+            >
+              450 m +
+            </Typography>
+            <Typography variant="body1" fontFamily={'sans-serif'} color="white">
+              Daily Automations
+            </Typography>
+          </Stack>
+          <Stack>
+            <Typography
+              variant="h3"
+              fontFamily={fontFamilyBoldVar}
+              fontWeight={900}
+              color="white"
+            >
+              99%
+            </Typography>
+            <Typography variant="body1" fontFamily={'sans-serif'} color="white">
+              Client Retention
+            </Typography>
+          </Stack>
+          <Stack>
+            <Typography
+              variant="h3"
+              fontFamily={fontFamilyBoldVar}
+              fontWeight={900}
+              color="white"
+            >
+              150 +
+            </Typography>
+            <Typography variant="body1" fontFamily={'sans-serif'} color="white">
+              Integrations
+            </Typography>
+          </Stack>
+          <Stack>
+            <Typography
+              variant="h3"
+              fontFamily={fontFamilyBoldVar}
+              fontWeight={900}
+              color="white"
+            >
+              350 +
+            </Typography>
+            <Typography variant="body1" fontFamily={'sans-serif'} color="white">
+              of the fortune 1000
+            </Typography>
           </Stack>
         </Stack>
       </Container>

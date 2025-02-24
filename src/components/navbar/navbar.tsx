@@ -13,11 +13,7 @@ import { NavbarMenuItem } from '../navbar-menu-item/navbar-menu-item';
 import { navbarData } from '@/utils/navbar-data';
 import { useEffect, useState } from 'react';
 
-type NavbarProps = {
-  window?: () => Window;
-};
-
-export function Navbar(props: NavbarProps) {
+export function Navbar() {
   const theme = useTheme();
   const isBiggerThanLarge = useMediaQuery(theme.breakpoints.up('xl'));
   const [isTop, setIsTop] = useState(true);
@@ -58,7 +54,7 @@ export function Navbar(props: NavbarProps) {
             padding: '8px 0px !important',
             alignItems: 'center',
           }}
-          maxWidth={isBiggerThanLarge ? 'lg' : 'md'}
+          maxWidth={isBiggerThanLarge ? 'xl' : 'lg'}
         >
           <Box sx={{}}>
             <Image
