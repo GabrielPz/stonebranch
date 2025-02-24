@@ -1,19 +1,15 @@
  
 'use client';
-
-import { directorsData, leadershipTeamData } from '@/utils/about-us/cards-data';
 import {
   Box,
   Button,
   Container,
-  Link,
   Stack,
   Typography,
   useMediaQuery,
   useTheme,
 } from '@mui/material';
 import Image from 'next/image';
-import { CardsGrid } from './components/cards-grid/cards-grid';
 import { PerkList } from './components/perk-list/perk-list';
 
 const fontFamilyBoldVar = 'var(--font-ample-soft-bold)';
@@ -138,12 +134,16 @@ export function Carreers() {
         right={0}
         width="100%"
         display={'flex'}
-        height={248}
         alignItems={'center'}
         justifyContent={'center'}
         flexDirection={'column'}
+        padding={4}
         sx={{
-          bgcolor: '#f4f4f4',
+          backgroundAttachment: 'fixed, scroll',
+          backgroundImage: 'url(/assets/carreers/8fb51e7888c638005216.svg), linear-gradient(160deg, #E0F7FA, #b3d4e4)',
+          backgroundPosition: '50vw, 0 0',
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: 'auto 90%, cover',
         }}
       >
         <Typography
@@ -166,111 +166,47 @@ export function Carreers() {
         >
           These three words represent the philosophy by which we thrive. Learn how Stonebranch invests in our team to help each of us achieve personal balance.
         </Typography>
+        <PerkList/>
       </Box>
-      <PerkList/>
-      <Box
-        position="relative"
-        left={0}
-        right={0}
-        width="100%"
-        display={'flex'}
-        alignItems={'center'}
-        justifyContent={'center'}
-        height={216}
-        flexDirection={'column'}
-        sx={{
-          background: `linear-gradient(
-            130deg,
-            #186cda 30%, 
-            #186cda 50%, 
-            #05b8d8 100%
-          )`,
-        }}
-      >
-        <Typography
-          variant="h4"
-          fontWeight={400}
-          mt={4}
-          align="center"
-          color="white"
-          fontFamily={fontFamilyBoldVar}
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            backgroundImage: 'url(/assets/carreers/8fb51e7888c638005216.svg)',
+            backgroundPosition: 'right 80vw center',
+            backgroundRepeat: 'no-repeat',
+          }}
         >
-          Stonebranch Leadership Team
-        </Typography>
-        <Typography
-          variant="h6"
-          fontWeight={400}
-          mb={4}
-          mt={4}
-          align="center"
-          color="white"
-          fontFamily={'sans-serif'}
-        >
-          The Stonebranch leadership team is comprised of savvy entrepreneurs
-          and seasoned industry experts, bringing years of <br /> experience and
-          innovation to an established company recognized by analysts for its
-          vision and value leadership.
-        </Typography>
-      </Box>
-      <CardsGrid
-        data={leadershipTeamData}
-        isBiggerThanLarge={isBiggerThanLarge}
-      />
-      <Box
-        position="relative"
-        left={0}
-        right={0}
-        width="100%"
-        display={'flex'}
-        alignItems={'center'}
-        justifyContent={'center'}
-        height={216}
-        flexDirection={'column'}
-        sx={{
-          background: `linear-gradient(
-            130deg,
-            #186cda 30%, 
-            #186cda 50%, 
-            #05b8d8 100%
-          )`,
-        }}
-      >
-        <Typography
-          variant="h4"
-          fontWeight={400}
-          mt={4}
-          align="center"
-          color="white"
-          fontFamily={fontFamilyBoldVar}
-        >
-          Board of Directors
-        </Typography>
-        <Typography
-          variant="h6"
-          fontWeight={400}
-          mb={4}
-          mt={4}
-          align="center"
-          color="white"
-          fontFamily={'sans-serif'}
-        >
-          Stonebranch&apos;s board of directors have a wealth of experience
-          across the information technology, finance,
-          <br /> and business sectors.
-        </Typography>
-      </Box>
-      <CardsGrid
-        data={directorsData}
-        isBiggerThanLarge={isBiggerThanLarge}
-        props={{
-          size: {
-            xs: 12,
-            sm: 12,
-            md: 6,
-            lg: 4,
-          },
-        }}
-      />
+
+          <Typography
+            variant="h4"
+            fontWeight={600}
+            mt={8}
+            mb={8}
+            align='center'
+            fontFamily={fontFamilyBoldVar}
+          >
+            Learn more about our Mission, Vision and Values
+          </Typography>
+          <Box
+            component={'video'}
+            width="790px"
+            height="444px"
+            sx={{
+              objectFit: 'cover',
+            }}
+            autoPlay
+            mb={8}
+            loop
+            muted
+            playsInline
+          >
+            <source src="/assets/carreers/Video-Careers-Mission-Vision-Values-SB.mp4" type="video/mp4" />
+          </Box>
+          
+        </Box>
+
     </Box>
   );
 }
